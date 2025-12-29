@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+:root {
+  /* LINE順番待ち カラーパレット */
+  --color-primary: #06C755;
+  --color-primary-dark: #05a648;
+  --color-secondary: #333333;
+  --color-accent: #FF6B35;
+  --color-background: #F5F5F5;
+  --color-background-white: #FFFFFF;
+  --color-text: #1A1A1A;
+  --color-text-sub: #666666;
+  --color-text-muted: #999999;
+  --color-border: #E5E5E5;
+  --color-error: #C62928;
+  --color-success: #06C755;
+  --color-warning: #FFB800;
+}
+
+@theme inline {
+  --color-primary: var(--color-primary);
+  --color-primary-dark: var(--color-primary-dark);
+  --color-secondary: var(--color-secondary);
+  --color-accent: var(--color-accent);
+  --color-background: var(--color-background);
+  --color-text: var(--color-text);
+  --color-text-sub: var(--color-text-sub);
+  --color-text-muted: var(--color-text-muted);
+  --color-border: var(--color-border);
+  --color-error: var(--color-error);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+}
+
+body {
+  background: var(--color-background);
+  color: var(--color-text);
+  font-family: "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
+}
