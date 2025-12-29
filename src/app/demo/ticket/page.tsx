@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Ticket, Users, Clock, MessageCircle } from "lucide-react";
+import { Users, Clock, MessageCircle } from "lucide-react";
 import Link from "next/link";
 
 export default function TicketPage() {
@@ -16,9 +16,6 @@ export default function TicketPage() {
         animate={{ opacity: 1, y: 0 }}
         className="text-center text-white mb-6"
       >
-        <div className="w-16 h-16 bg-white/20 rounded-2xl flex items-center justify-center mx-auto mb-3">
-          <Ticket className="w-8 h-8" />
-        </div>
         <h1 className="text-xl font-bold">DEMO CAFE</h1>
         <p className="text-white/80 text-sm">渋谷店</p>
       </motion.div>
@@ -30,10 +27,6 @@ export default function TicketPage() {
         transition={{ delay: 0.2 }}
       >
         <Card className="text-center py-8">
-          <Badge variant="success" className="mb-4">
-            整理券を発行しました
-          </Badge>
-
           <p className="text-gray-500 text-sm mb-2">あなたの番号</p>
           <motion.div
             initial={{ scale: 0.5 }}

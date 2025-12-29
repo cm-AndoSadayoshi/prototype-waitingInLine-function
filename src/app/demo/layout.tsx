@@ -116,7 +116,7 @@ export default function DemoLayout({
             </div>
 
             {/* コンテンツエリア */}
-            <div className="h-[calc(100%-48px-34px)] overflow-y-auto bg-white">
+            <div className="h-[calc(100%-48px-34px)] overflow-y-auto bg-white relative">
               {children}
             </div>
 

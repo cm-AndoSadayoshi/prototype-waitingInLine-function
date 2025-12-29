@@ -2,9 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
-import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import {
   Users,
@@ -61,14 +59,9 @@ export default function WaitingPage() {
       <div className="p-4 space-y-4">
         {/* 整理券情報 */}
         <Card>
-          <div className="flex items-center justify-between mb-4">
-            <div>
-              <p className="text-xs text-gray-500">あなたの番号</p>
-              <p className="text-3xl font-bold text-[#06C755]">A-023</p>
-            </div>
-            <Badge variant={isNearby ? "warning" : "info"}>
-              {isNearby ? "もうすぐです" : "待機中"}
-            </Badge>
+          <div className="mb-4">
+            <p className="text-xs text-gray-500">あなたの番号</p>
+            <p className="text-3xl font-bold text-[#06C755]">A-023</p>
           </div>
 
           {/* 待ち組数 */}
