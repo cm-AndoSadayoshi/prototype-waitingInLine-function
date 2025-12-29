@@ -9,25 +9,32 @@ description: "グロースパック for LINEのデモを構築する。プロジ
 
 ## 前提条件
 
-`demo-doc-generator` でドキュメントが生成済みであること。
+- `demo-doc-generator` でドキュメントが生成済みであること
+- **重要**: プロジェクトは必ずリポジトリのルートに作成すること（Vercelデプロイのため）
 
 ## ワークフロー
 
 ```
-1. プロジェクト作成 → 2. ディレクトリ構造作成 → 3. ボイラープレート配置 → 4. 画面フロー設計 → 5. 画面実装 → 6. デプロイ
+1. プロジェクト作成（ルート） → 2. ディレクトリ構造作成 → 3. ボイラープレート配置 → 4. 画面フロー設計 → 5. 画面実装 → 6. デプロイ
 ```
 
-### Step 1: プロジェクト作成
+### Step 1: プロジェクト作成（リポジトリのルートに直接作成）
+
+**重要**: サブディレクトリではなく、リポジトリのルートに直接Next.jsプロジェクトを作成する。
 
 ```bash
-pnpm create next-app@latest [project-name] \
+# リポジトリのルートで実行（カレントディレクトリに作成）
+pnpm create next-app@latest . \
   --typescript --tailwind --eslint --app --src-dir --use-pnpm
 
-cd [project-name]
+# 依存関係を追加
 pnpm add framer-motion zod lucide-react clsx tailwind-merge
 ```
 
-または `scripts/create-project.sh` を実行。
+**注意点**:
+- `.`（ドット）を指定することで、カレントディレクトリ（リポジトリのルート）に直接作成
+- サブディレクトリ（例: `demo/`）には作成しない
+- これにより、Vercelがルートの `package.json` と `next.config.js` を認識し、正常にビルドできる
 
 ### Step 2: ディレクトリ構造作成
 
@@ -171,7 +178,6 @@ vercel --prod
 
 ## リソース
 
-- **scripts/create-project.sh**: プロジェクト自動生成スクリプト
 - **assets/boilerplate/**: 初期設定ファイル
   - `demo-layout.tsx`: サイドバー付きPCブラウザ用iPhoneフレーム
   - `mini-layout.tsx`: LINEミニアプリ用レイアウト
