@@ -1,5 +1,5 @@
 import { WaitingContent } from "@/components/pages/WaitingContent";
 
 export default function WaitingPage() {
-  return <WaitingContent basePath="/demo" />;
+  return <WaitingContent basePath="/mini" />;
 }
